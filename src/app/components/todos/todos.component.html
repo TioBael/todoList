@@ -9,10 +9,11 @@
         />
         <input type="submit" value="Add Todo" class="todo-submit"/>
     </form>
-<!--<div *ngFor="let todo of todos; let i = index"  class="todo {{ (todo.completed ? 'done' : '' ) }}"> -->
+
     <div *ngFor="let todo of todos; let i = index"  class="todo" [class.done]="todo.completed">
-        <div class="id">{{ i }}</div>
-        <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
-        <button class="delete" (click)="deleteTodo(i)">Remove</button>
+        <div class="content" (click)="toggleDone(i)">
+            {{ todo.content }}
+            <button class="delete" (click)="deleteTodo(i)">Remove</button>
+        </div>
     </div>
 </div>
